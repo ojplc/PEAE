@@ -19,7 +19,7 @@ class Peae:
         
         
         
-    def permutar_quantidade(self, _grupos = False): 
+    def fatorial(self, _grupos = False): 
         produto = 1
         valor = self.quantidade
         if valor == 0:
@@ -48,10 +48,9 @@ class Peae:
     def permutar_em_grupos(self):
         if not self.repeticao:
             repetido = Peae(quantidade = self.grupo)
-            permutacao_sem_repeticao = self.permutar_quantidade(_grupos = True) / repetido.permutar_quantidade()
+            permutacao_sem_repeticao = self.fatorial(_grupos = True) / repetido.fatorial()
             return int(permutacao_sem_repeticao)
         else:
-            return self.permutar_quantidade(_grupos = True)
+            return self.fatorial(_grupos = True)
 
         
-    
